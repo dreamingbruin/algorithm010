@@ -10,6 +10,7 @@ import java.util.Optional;
 public class Tests {
 
     public static void execute(Class<?> clazz, Pair<?, ?>... pairs) {
+        System.out.println(String.format("Testing class: [%s]", clazz));
         Optional<Method> optionalMethod = Arrays.stream(clazz.getDeclaredMethods())
                 .filter(method -> Modifier.isPublic(method.getModifiers()))
                 .filter(method -> !Modifier.isStatic(method.getModifiers()))
