@@ -8,10 +8,10 @@ public class FindOutOfOrderIndex {
     public static class Solution {
 
         public int find(int[] array) {
-            return incursion(array, 0, array.length - 1);
+            return recursion(array, 0, array.length - 1);
         }
 
-        private int incursion(int[] array, int left, int right) {
+        private int recursion(int[] array, int left, int right) {
             if (left > right) {
                 return -1;
             }
@@ -23,9 +23,9 @@ public class FindOutOfOrderIndex {
                 return index;
             }
             if (array[index] > array[0]) {
-                return incursion(array, index + 1, right);
+                return recursion(array, index + 1, right);
             }
-            return incursion(array, left, index - 1);
+            return recursion(array, left, index - 1);
         }
 
     }
